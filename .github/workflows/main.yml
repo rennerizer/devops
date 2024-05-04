@@ -26,14 +26,13 @@ jobs:
     needs: basic_job
     steps:
       - name: Test Job
-        run: |
-            echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
+        run: echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
   Load-Test:
     runs-on: ubuntu-latest
     environment: Load-Test
     needs: basic_job
   Production:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     environment:
       name: Production
       url: https://writeabout.net
