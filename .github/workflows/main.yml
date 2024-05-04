@@ -1,0 +1,22 @@
+# An initial workflow used for experimentation
+name: Initial Workflow
+on: 
+  push: 
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  basic_job:
+    name: Basic Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet the user
+        run: |
+            echo "Hello world from ${{ github.actor }}."
+            echo "Current branch is '${{ github.ref }}'."
+        shell: bash
+      - name: Checkout
+        uses: actions/checkout@v4.1.4
+      - run: tree
+      
