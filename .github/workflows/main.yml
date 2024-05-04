@@ -28,8 +28,6 @@ jobs:
       - name: Test Job
         run: |
             echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
-            sec=$(echo ${{ secrets.MAIN_SECRET }} | sed 's/./& /g')
-            echo "My secret is '$sec'."
   Load-Test:
     runs-on: ubuntu-latest
     environment: Load-Test
